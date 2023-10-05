@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left|center"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="5dp"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:text="-"
+        android:textColor="#ffffff"
+        android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/gasvolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"
+                android:text="Sensor_1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff000000"
+                android:autoSizeTextType="uniform"
+                android:textStyle="bold" />
+</LinearLayout>
