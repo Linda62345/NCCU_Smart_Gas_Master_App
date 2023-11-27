@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background shape with a shadow -->
+    <item>
+        <shape>
+            <solid android:color="@color/white"/>
+            <corners android:radius="10dp" /> <!-- Adjusted to 10dp -->
+        </shape>
+    </item>
+
+    <!-- Shadow layer -->
+    <item android:right="2dp" android:left="2dp" android:top="2dp" android:bottom="2dp">
+        <shape>
+            <solid android:color="@android:color/darker_gray" />
+            <corners android:radius="10dp" /> <!-- Adjusted to 10dp -->
+        </shape>
+    </item>
+
+    <!-- Your button content -->
+    <item android:bottom="4dp">
+        <selector>
+            <item android:state_pressed="true">
+                <shape>
+                    <solid android:color="@color/main_blue" />
+                    <corners android:radius="10dp" /> <!-- Adjusted to 10dp -->
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/main_blue" />
+                    <corners android:radius="10dp" /> <!-- Adjusted to 10dp -->
+                </shape>
+            </item>
+        </selector>
+    </item>
+</layer-list>

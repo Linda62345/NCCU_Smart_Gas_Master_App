@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterWeightOnly">
 
-    <LinearLayout
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical">
+        android:backgroundTint="@color/white"
+        android:contentDescription="TODO"
+        android:layout_marginRight="300dp"
+        android:padding="20dp"
+        android:drawableLeft="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:stateListAnimator="@null"
+        android:background="@color/white"/>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="18dp"
+            android:paddingBottom="90dp">
+
+            <TextView
+                android:id="@+id/newReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="瓦斯桶註冊"
+                android:textColor="@color/black"
+                android:layout_marginBottom="25dp"
+                android:textSize="35sp"
+                android:textStyle="bold" />
 
         <TextView
             android:id="@+id/gas_empty_weight"
@@ -43,13 +78,13 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/confirmGasEmptyWeightButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="70dp"
             android:layout_weight="@integer/material_motion_duration_medium_1"
-            android:backgroundTint="#ff5877e4"
+            android:background="@drawable/main_blue_button_back"
             android:text="@string/confirm_gas_weight_empty"
             android:textColor="#ffffffff"
             android:textSize="20.0sp"
@@ -61,3 +96,4 @@
     </LinearLayout>
 
 </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

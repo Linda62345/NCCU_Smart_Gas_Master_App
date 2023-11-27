@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exchangeFailedImageView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/exchangeFailedNext"
         android:layout_width="239dp"
         android:layout_height="66dp"
@@ -61,6 +61,8 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="86dp"
         android:layout_marginBottom="273dp"
+        android:background="@drawable/main_blue_button_back"
+        android:textColor="@color/white"
         android:text="前往掃描介面"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

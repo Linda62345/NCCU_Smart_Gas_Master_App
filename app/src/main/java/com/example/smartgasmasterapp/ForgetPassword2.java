@@ -26,7 +26,7 @@ import java.util.Objects;
 
 public class ForgetPassword2 extends AppCompatActivity {
 
-    private Button back;
+    private Button back,backButton;
     public ForgetPassword1 forgetPassword1;
     public EditText NewPassword,reNewPassword;
     private TextView tvStatus;
@@ -39,6 +39,15 @@ public class ForgetPassword2 extends AppCompatActivity {
         setContentView(R.layout.activity_forget_password2);
 
         back = findViewById(R.id.backToLoginButton);
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForgetPassword2.this, ForgetPassword1.class);
+                startActivity(intent);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

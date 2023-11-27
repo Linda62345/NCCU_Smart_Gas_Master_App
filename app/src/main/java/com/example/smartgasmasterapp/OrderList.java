@@ -35,7 +35,7 @@ import java.util.Objects;
 
 public class OrderList extends AppCompatActivity {
 
-    private Button unfinished,finished;
+    private Button unfinished,finished,backButton;
     private ListView orderlist;
     public int Worker_Id;
     InputStream is = null;
@@ -60,6 +60,7 @@ public class OrderList extends AppCompatActivity {
         unfinished = findViewById(R.id.order_unfinished);
         orderlist = (ListView)findViewById(R.id.list_item);
         finished = findViewById(R.id.order_finished);
+        backButton = findViewById(R.id.backButton);
 
         StrictMode.setThreadPolicy((new StrictMode.ThreadPolicy.Builder().permitNetwork().build()));
         getData("http://54.199.33.241/test/Worker_UnOrderList.php");
@@ -69,6 +70,14 @@ public class OrderList extends AppCompatActivity {
             Log.i("OrderList cre Exception",e.toString());
         }
         setAdapter();
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderList.this, Homepage.class);
+                startActivity(intent);
+            }
+        });
 
         unfinished.setOnClickListener(new View.OnClickListener() {
             @Override

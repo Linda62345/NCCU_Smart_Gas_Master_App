@@ -46,7 +46,7 @@ import java.util.concurrent.ExecutionException;
 public class NewGasRegister extends AppCompatActivity {
     // Declare public elements
     public TextView manuallyEnterCode;
-    public Button nextGas;
+    public Button nextGas,backButton;
     public TextView gasEmptyWeight;
     public TextView newScannerString;
     public TextView newText;
@@ -88,6 +88,8 @@ public class NewGasRegister extends AppCompatActivity {
         textView5 = findViewById(R.id.textView5);
         skip = findViewById(R.id.skipRegister);
 
+        backButton = findViewById(R.id.backButton);
+
         //inputs
         changeableNewVolume = findViewById(R.id.changeableOldVolume);
         confirmNewScanButton = findViewById(R.id.confirm_OldScan_button);
@@ -99,6 +101,13 @@ public class NewGasRegister extends AppCompatActivity {
         remain_Gas = new Remain_Gas();
         sensor_Id = remain_Gas.finalSensorId.get(0);
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NewGasRegister.this, ScanOriginalQRCode.class);
+                startActivity(intent);
+            }
+        });
 
         //Gas ID
         mannuallyEnterGasCode.addTextChangedListener(new TextWatcher() {

@@ -68,7 +68,7 @@ public class ScanOriginalQRCode extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CAMERA = 0;
     private PreviewView previewView;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
-    private Button next, next_gas;
+    private Button next, next_gas, backButton;
     public String Original_Order_Id, GAS_ID;
     private TextView gas_Id;
     private String qrCode;
@@ -93,6 +93,7 @@ public class ScanOriginalQRCode extends AppCompatActivity {
         gas_Id = findViewById(R.id.changableOriginalID);
         input_Id = findViewById(R.id.mannuallyEnterGasCode);
         barcodeView = findViewById(R.id.originalScanner);
+        backButton = findViewById(R.id.backButton);
         barcodeView.decodeContinuous(callback);
 
         /*next_gas.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +109,14 @@ public class ScanOriginalQRCode extends AppCompatActivity {
 
         //scanner
         next.setVisibility(View.VISIBLE);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScanOriginalQRCode.this, OrderInfo.class);
+                startActivity(intent);
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class RegisterWeightOnly extends AppCompatActivity {
 
-    public Button complete;
+    public Button complete,backButton;
     public EditText gasEmptyWeight;
     public Remain_Gas remain_Gas;
     public String sensor_Id;
@@ -35,9 +35,18 @@ public class RegisterWeightOnly extends AppCompatActivity {
 
         complete = findViewById(R.id.confirmGasEmptyWeightButton);
         gasEmptyWeight = findViewById(R.id.input_gas_empty_weight);
+        backButton = findViewById(R.id.backButton);
 
         remain_Gas = new Remain_Gas();
         sensor_Id = remain_Gas.finalSensorId.get(0);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterWeightOnly.this, ScanNewQRCode.class);
+                startActivity(intent);
+            }
+        });
 
         complete.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -36,7 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private Button register;
+    private Button register,backButton;
     private RadioGroup radioGroup;
     private EditText etName, etEmail, etAddress, etPhone, etHouseTel, etPassword, etReenterPassword;
     private RadioButton etMale, etFemale, radioButton;
@@ -59,6 +59,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        backButton = findViewById(R.id.backButton);
         radioGroup = findViewById(R.id.radioGroup);
         etName = findViewById(R.id.register_name_input);
         etMale = findViewById(R.id.radioButton_male);
@@ -85,6 +86,14 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
 
             @Override
             public void afterTextChanged(Editable editable) {
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Register.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 

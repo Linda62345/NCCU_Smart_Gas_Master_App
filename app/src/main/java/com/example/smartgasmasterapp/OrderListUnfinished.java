@@ -32,7 +32,7 @@ import java.util.Objects;
 
 public class OrderListUnfinished extends AppCompatActivity {
 
-    private Button finished;
+    private Button finished,backButton;
     public String Worker_Id;
     private ListView orderlist;
     private String[] data,order_Id;
@@ -49,6 +49,15 @@ public class OrderListUnfinished extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         finished = findViewById(R.id.order_finished);
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderListUnfinished.this, Homepage.class);
+                startActivity(intent);
+            }
+        });
 
         finished.setOnClickListener(new View.OnClickListener() {
             @Override

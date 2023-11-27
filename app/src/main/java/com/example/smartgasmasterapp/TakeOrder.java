@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class TakeOrder extends AppCompatActivity {
 
-    private Button addOrder;
+    private Button addOrder,backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,15 @@ public class TakeOrder extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         addOrder = findViewById(R.id.confirmOrderButton);
+        backButton = findViewById(R.id.backButton);
+
+//        backButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TakeOrder.this, OrderList.class);
+//                startActivity(intent);
+//            }
+//        });
 
         addOrder.setOnClickListener(new View.OnClickListener() {
             @Override

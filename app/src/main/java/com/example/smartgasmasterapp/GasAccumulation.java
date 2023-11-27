@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class GasAccumulation extends AppCompatActivity {
 
-    private Button next;
+    private Button next, backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,15 @@ public class GasAccumulation extends AppCompatActivity {
 
 
         next = findViewById(R.id.confirm_NewScan_button);
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GasAccumulation.this, ScanNewQRCode.class);
+                startActivity(intent);
+            }
+        });
 
 
         next.setOnClickListener(new View.OnClickListener() {

@@ -60,7 +60,7 @@ import java.util.concurrent.ExecutionException;
 public class ScanNewQRCode extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CAMERA = 0;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
-    private Button next,next_gas;
+    private Button next,next_gas,backButton;
     public String order_Id, currentDateTimeString;
     public EditText input_newGasId;
     private TextView GAS_ID, Initial_Volume, GAS_Type;
@@ -81,6 +81,7 @@ public class ScanNewQRCode extends AppCompatActivity {
 
         next = findViewById(R.id.confirm_NewScan_button);
         barcodeView = findViewById(R.id.newScanner);
+        backButton = findViewById(R.id.backButton);
         barcodeView.decodeContinuous(callback);
 
         OrderList orderList = new OrderList();
@@ -91,6 +92,14 @@ public class ScanNewQRCode extends AppCompatActivity {
         GAS_ID = findViewById(R.id.changeableNewID);
         Initial_Volume = findViewById(R.id.changeableNewVolume);
         GAS_Type = findViewById(R.id.GasTypeChoice);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScanNewQRCode.this, ScanOriginalQRCode.class);
+                startActivity(intent);
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

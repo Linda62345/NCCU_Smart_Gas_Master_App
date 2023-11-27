@@ -43,7 +43,7 @@ import java.util.Objects;
 import java.util.TimeZone;
 
 public class OrderInfo extends AppCompatActivity {
-    private Button startScan;
+    private Button startScan,backButton;
     private String order_Id, currentDateTimeString;
     private TextView name, phone, address, ordertime, gas_Quan;
     public static int gas_quantity;
@@ -61,6 +61,8 @@ public class OrderInfo extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         startScan = findViewById(R.id.confirmOrder);
+
+        backButton = findViewById(R.id.backButton);
 
         orderList = new OrderList();
 
@@ -92,6 +94,14 @@ public class OrderInfo extends AppCompatActivity {
         } catch (Exception e) {
             Log.i("Orderdetail Exception", e.toString());
         }
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderInfo.this, OrderList.class);
+                startActivity(intent);
+            }
+        });
 
         startScan.setOnClickListener(new View.OnClickListener() {
             @Override

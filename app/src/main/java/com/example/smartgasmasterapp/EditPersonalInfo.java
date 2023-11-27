@@ -41,7 +41,7 @@ public class EditPersonalInfo extends AppCompatActivity {
     public String Worker_Name, Worker_Address, Worker_Email;
     public int Worker_Tel,Worker_Phone;
     private TextView Name, Address, Email, Tel, Phone;
-    private Button save;
+    private Button save,backButton;
     public String worker_name="",phone="",tel="",address="",email="";
     public Homepage homepage;
 
@@ -56,6 +56,7 @@ public class EditPersonalInfo extends AppCompatActivity {
         Tel = findViewById(R.id.editHousePhone);
         Phone = findViewById(R.id.editPhoneNo);
         save = findViewById(R.id.saveInfo_button);
+        backButton = findViewById(R.id.backButton);
 
         LoginActivity loginActivity = new LoginActivity();
         Worker_ID = loginActivity.getWorkerID();
@@ -85,6 +86,14 @@ public class EditPersonalInfo extends AppCompatActivity {
                 Tel = findViewById(R.id.editHousePhone);
                 Phone = findViewById(R.id.editPhoneNo);
                 saveProfile();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EditPersonalInfo.this, Homepage.class);
+                startActivity(intent);
             }
         });
 

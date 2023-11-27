@@ -41,7 +41,7 @@ import java.util.TimeZone;
 public class Remain_Gas extends AppCompatActivity {
     public String order_Id, Company_id, result;
     public static String Customer_Id;
-    public Button Scan_New_Gas, next;
+    public Button Scan_New_Gas, next, backButton;
     public TextView CompanyName;
     public int volume, total_volume;
     public EditText RemainInput;
@@ -59,6 +59,7 @@ public class Remain_Gas extends AppCompatActivity {
 
         Scan_New_Gas = findViewById(R.id.ScanNewGas);
         CompanyName = findViewById(R.id.gasCompanyName);
+        backButton = findViewById(R.id.backButton);
         //next = findViewById(R.id.next);
         //RemainInput = findViewById(R.id.RemainGasInput);
 
@@ -70,6 +71,14 @@ public class Remain_Gas extends AppCompatActivity {
         sensorTime = new ArrayList<String>();
 
         listView = findViewById(R.id.Listview);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Remain_Gas.this, ScanNewQRCode.class);
+                startActivity(intent);
+            }
+        });
 
         Scan_New_Gas.setOnClickListener(new View.OnClickListener() {
             @Override

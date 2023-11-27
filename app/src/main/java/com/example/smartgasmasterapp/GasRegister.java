@@ -53,7 +53,7 @@ public class GasRegister extends AppCompatActivity {
     public TextView changeableNewID;
     public TextView textView5;
     public TextView changeableNewVolume;
-    public Button confirmNewScanButton,skip;
+    public Button confirmNewScanButton,skip,backButton;
 
     // Other public variables
     public String order_Id;
@@ -85,6 +85,7 @@ public class GasRegister extends AppCompatActivity {
         changeableNewID = findViewById(R.id.changeableOldID);
         textView5 = findViewById(R.id.textView5);
         skip = findViewById(R.id.skipRegister);
+        backButton = findViewById(R.id.backButton);
 
         //inputs
         changeableNewVolume = findViewById(R.id.changeableOldVolume);
@@ -92,6 +93,14 @@ public class GasRegister extends AppCompatActivity {
 
         LoginActivity loginActivity = new LoginActivity();
         Worker_Id = loginActivity.Worker_ID;
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GasRegister.this, ScanOriginalQRCode.class);
+                startActivity(intent);
+            }
+        });
 
 
         //Gas ID
