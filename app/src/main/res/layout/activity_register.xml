@@ -17,8 +17,12 @@
         android:padding="20dp"
         android:layout_marginRight="350dp"
         android:drawableLeft="@drawable/baseline_arrow_back_ios_24"
-        android:stateListAnimator="@null"
         android:background="@color/white"/>
+<!--        android:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_constraintStart_toStartOf="parent"-->
+<!--        android:layout_constraintTop_toTopOf="parent"-->
+<!--        android:stateListAnimator="@null"-->
+
 
     <ScrollView
         android:id="@+id/scrollView2"
