@@ -53,7 +53,7 @@ public class ScanReceiptQRCode extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_receipt_qrcode);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         barcodeView = findViewById(R.id.receiptScanner);
         barcodeView.decodeContinuous(callback);

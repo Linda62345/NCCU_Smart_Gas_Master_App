@@ -81,7 +81,7 @@ public class ScanOriginalQRCode extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_original_qrcode);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         //next_gas = findViewById(R.id.next_gas);
         next = findViewById(R.id.confirm_originalScan_button);
@@ -113,8 +113,7 @@ public class ScanOriginalQRCode extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ScanOriginalQRCode.this, OrderInfo.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

@@ -58,11 +58,11 @@
             android:layout_width="0dp"
             android:layout_height="56.9dp"
             android:layout_weight="1"
-            android:background="@drawable/white_button_back"
+            android:background="@drawable/mid_gray_button_back"
             android:clickable="false"
             android:gravity="center"
             android:text="@string/unfinished"
-            android:textColor="@color/mid_gray"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -71,16 +71,17 @@
             android:layout_height="56.9dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:background="@drawable/mid_gray_button_back"
+            android:background="@drawable/white_button_back"
             android:clickable="true"
             android:gravity="center"
             android:text="@string/finished"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textColor="@color/mid_gray"
+            android:textSize="20sp"
+            />
     </LinearLayout>
 
 
-        <ListView
+        <com.example.smartgasmasterapp.listViewAdjust
             android:id="@+id/list_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

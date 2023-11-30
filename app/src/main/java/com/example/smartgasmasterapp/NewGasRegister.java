@@ -65,7 +65,7 @@ public class NewGasRegister extends AppCompatActivity {
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
     private EditText mannuallyEnterGasCode,inputGasEmptyWeight;
     private String qrCode,gasId,gasWeight;
-    private String URL = "http://10.0.2.2/SQL_Connect/NewRegisterGas.php";
+    private String URL = "http://54.199.33.241/test/NewRegisterGas.php";
     private ArrayList<String> new_Gas_Id_Array, empty_Weight_Array;
     public Remain_Gas remain_Gas;
     public String sensor_Id;
@@ -104,8 +104,7 @@ public class NewGasRegister extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NewGasRegister.this, ScanOriginalQRCode.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

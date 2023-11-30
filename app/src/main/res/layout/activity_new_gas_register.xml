@@ -17,9 +17,6 @@
         android:layout_marginRight="300dp"
         android:padding="20dp"
         android:drawableLeft="@drawable/baseline_arrow_back_ios_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:stateListAnimator="@null"
         android:background="@color/white"/>
 
@@ -187,7 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="70dp"
-            android:layout_weight="@integer/material_motion_duration_medium_1"
+            android:layout_weight="1"
             android:background="@drawable/main_blue_button_back"
             android:text="@string/confirm_gas_register"
             android:textColor="#ffffffff"
@@ -203,7 +200,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="70dp"
-                android:layout_weight="@integer/material_motion_duration_medium_1"
+                android:layout_weight="1"
                 android:background="@drawable/main_blue_button_back"
                 android:text="跳過註冊"
                 android:textColor="#ffffffff"

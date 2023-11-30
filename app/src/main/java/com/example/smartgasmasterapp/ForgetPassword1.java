@@ -43,8 +43,7 @@ public class ForgetPassword1 extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ForgetPassword1.this, LoginActivity.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
         newPass.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +72,7 @@ public class ForgetPassword1 extends AppCompatActivity {
             }
         });
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         //顯示不出來
         Log.d("ForgetPassword1", email.getText().toString());
     }

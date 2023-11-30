@@ -50,7 +50,7 @@ public class OrderList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_list);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         sensor_Id_Array = new ArrayList<>();
         sensor_Id_Array.clear();
@@ -74,8 +74,7 @@ public class OrderList extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrderList.this, Homepage.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

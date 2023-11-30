@@ -55,7 +55,7 @@ public class Remain_Gas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remain_gas);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         Scan_New_Gas = findViewById(R.id.ScanNewGas);
         CompanyName = findViewById(R.id.gasCompanyName);
@@ -75,8 +75,7 @@ public class Remain_Gas extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Remain_Gas.this, ScanNewQRCode.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

@@ -46,7 +46,7 @@ public class Homepage extends AppCompatActivity {
 
         setContentView(R.layout.activity_homepage);
 
-        Objects.requireNonNull(getSupportActionBar()).hide();
+        //Objects.requireNonNull(getSupportActionBar()).hide();
 
 
         logout = findViewById(R.id.logout);

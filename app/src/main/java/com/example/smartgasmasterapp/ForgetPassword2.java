@@ -44,8 +44,7 @@ public class ForgetPassword2 extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ForgetPassword2.this, ForgetPassword1.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -56,7 +55,7 @@ public class ForgetPassword2 extends AppCompatActivity {
             }
         });
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         Bundle bundle = getIntent().getExtras();
         email = bundle.getString("email");

@@ -138,7 +138,7 @@
                 android:minHeight="30dp"
                 android:layout_gravity="start|center"
                 android:layout_marginTop="6.0dp"
-                android:text="訂購時間 : "
+                android:text="預期配送時間 : "
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ff757575"
                 android:autoSizeTextType="uniform"

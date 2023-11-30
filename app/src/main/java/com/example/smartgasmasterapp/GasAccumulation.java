@@ -18,7 +18,7 @@ public class GasAccumulation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_accumulation);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
 
         next = findViewById(R.id.confirm_NewScan_button);
@@ -27,8 +27,7 @@ public class GasAccumulation extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GasAccumulation.this, ScanNewQRCode.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

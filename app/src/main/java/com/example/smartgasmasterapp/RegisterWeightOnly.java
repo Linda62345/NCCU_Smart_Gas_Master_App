@@ -43,8 +43,7 @@ public class RegisterWeightOnly extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterWeightOnly.this, ScanNewQRCode.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

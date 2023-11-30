@@ -18,7 +18,7 @@ public class TakeOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_order);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         addOrder = findViewById(R.id.confirmOrderButton);
         backButton = findViewById(R.id.backButton);

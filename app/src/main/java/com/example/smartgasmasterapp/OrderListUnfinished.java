@@ -46,7 +46,7 @@ public class OrderListUnfinished extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_list_unfinished);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         finished = findViewById(R.id.order_finished);
         backButton = findViewById(R.id.backButton);
@@ -54,8 +54,7 @@ public class OrderListUnfinished extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrderListUnfinished.this, Homepage.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

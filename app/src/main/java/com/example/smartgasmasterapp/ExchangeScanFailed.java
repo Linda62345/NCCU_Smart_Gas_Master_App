@@ -14,7 +14,7 @@ public class ExchangeScanFailed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exchange_scan_failed);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         next = findViewById(R.id.exchangeFailedNext);
         next.setOnClickListener(new View.OnClickListener() {

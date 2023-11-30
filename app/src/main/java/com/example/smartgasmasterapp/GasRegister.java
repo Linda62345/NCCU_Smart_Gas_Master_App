@@ -66,13 +66,13 @@ public class GasRegister extends AppCompatActivity {
     private EditText mannuallyEnterGasCode,inputGasEmptyWeight;
     private String qrCode,gasId,gasWeight;
     public int Worker_Id;
-    private String URL = "http://10.0.2.2/SQL_Connect/registGas.php";
+    private String URL = "http://54.199.33.241/test/registGas.php";
     private ArrayList<String> new_Gas_Id_Array, empty_Weight_Array;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_register);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Find views by ID
         newScanner = findViewById(R.id.oldScanner);
@@ -97,8 +97,7 @@ public class GasRegister extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GasRegister.this, ScanOriginalQRCode.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -191,6 +190,9 @@ public class GasRegister extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "新增失敗，此瓦斯桶已在資料庫中", Toast.LENGTH_LONG).show();
                     } else if (response.contains("failure")) {
                         Toast.makeText(getApplicationContext(), "新增失敗", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "新增失敗，請聯絡開發人員", Toast.LENGTH_LONG).show();
                     }
                 }
             }, new Response.ErrorListener() {

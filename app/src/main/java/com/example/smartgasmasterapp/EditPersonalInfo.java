@@ -92,12 +92,11 @@ public class EditPersonalInfo extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EditPersonalInfo.this, Homepage.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
     }
     public void showData() throws MalformedURLException {
