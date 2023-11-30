@@ -21,6 +21,7 @@ public class GasAccumulation extends AppCompatActivity {
         //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
 
+
         next = findViewById(R.id.confirm_NewScan_button);
         backButton = findViewById(R.id.backButton);
 

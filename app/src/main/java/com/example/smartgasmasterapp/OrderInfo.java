@@ -98,7 +98,8 @@ public class OrderInfo extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(OrderInfo.this, OrderList.class);
+                startActivity(intent);
             }
         });
 
@@ -155,7 +156,7 @@ public class OrderInfo extends AppCompatActivity {
             Order_GasQuan = responseJSON.getString("Gas_Quantity");
             gas_Quan.setText(Order_GasQuan);
             gas_quantity = Integer.parseInt(Order_GasQuan);
-            String OT = responseJSON.getString("Expect_time");
+            String OT = responseJSON.getString("Order_Time");
             ordertime.setText(OT);
         } catch (Exception e) {
             Log.i("Order Info Exception", e.toString());

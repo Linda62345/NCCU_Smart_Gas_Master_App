@@ -96,7 +96,8 @@ public class ScanNewQRCode extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(ScanNewQRCode.this, ScanOriginalQRCode.class);
+                startActivity(intent);
             }
         });
 
@@ -158,7 +159,7 @@ public class ScanNewQRCode extends AppCompatActivity {
                 Initial_Volume.setText("");
                 GAS_Type.setText("");
             } else {
-                String Showurl = "http://54.199.33.241/test/Show_Gas_Info.php";
+                String Showurl = "http://10.0.2.2/SQL_Connect/Show_Gas_Info.php";
                 URL url = new URL(Showurl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");

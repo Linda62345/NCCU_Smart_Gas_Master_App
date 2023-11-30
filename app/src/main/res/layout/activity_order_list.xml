@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:autoSizeTextType="uniform"
         android:maxLines="1"
-        android:text="訂單查詢"
+        android:text="今天訂單"
         android:textColor="@color/black"
         android:layout_marginBottom="25dp"
         android:textSize="35sp"

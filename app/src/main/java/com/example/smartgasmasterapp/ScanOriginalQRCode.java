@@ -113,7 +113,8 @@ public class ScanOriginalQRCode extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(ScanOriginalQRCode.this, OrderInfo.class);
+                startActivity(intent);
             }
         });
 

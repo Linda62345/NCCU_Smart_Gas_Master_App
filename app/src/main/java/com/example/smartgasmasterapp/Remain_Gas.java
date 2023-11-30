@@ -75,7 +75,8 @@ public class Remain_Gas extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(Remain_Gas.this, ScanNewQRCode.class);
+                startActivity(intent);
             }
         });
 

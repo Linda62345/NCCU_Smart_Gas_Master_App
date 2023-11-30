@@ -74,7 +74,8 @@ public class OrderList extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(OrderList.this, Homepage.class);
+                startActivity(intent);
             }
         });
 

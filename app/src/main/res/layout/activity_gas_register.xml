@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="70dp"
                 android:layout_weight="1"
-                android:background="@color/main_blue"
+                android:background="@drawable/main_blue_button_back"
                 android:text="@string/confirm_gas_register"
                 android:textColor="#ffffffff"
                 android:textSize="20.0sp"
