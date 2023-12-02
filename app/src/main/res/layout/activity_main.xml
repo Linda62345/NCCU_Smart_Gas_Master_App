@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="#F2F2EE">
 
     <ImageView
-        android:src="@drawable/logo"
+        android:src="@drawable/gasMaster"
         android:layout_width="match_parent"
         android:layout_height="277dp"
         android:layout_gravity="center"
