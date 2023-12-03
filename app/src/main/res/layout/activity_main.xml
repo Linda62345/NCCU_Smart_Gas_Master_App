@@ -9,7 +9,7 @@
     android:background="#F2F2EE">
 
     <ImageView
-        android:src="@drawable/gasMaster"
+        android:src="@drawable/gasmaster"
         android:layout_width="match_parent"
         android:layout_height="277dp"
         android:layout_gravity="center"
