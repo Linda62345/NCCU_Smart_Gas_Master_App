@@ -1,6 +1,7 @@
 package com.example.smartgasmasterapp;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Size;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -101,6 +103,10 @@ public class GasRegister extends AppCompatActivity {
             }
         });
 
+        ScanOriginalQRCode scanOriginalQRCode = new ScanOriginalQRCode();
+        if(scanOriginalQRCode.qrCodeText!=null && !scanOriginalQRCode.qrCodeText.equals("")){
+            mannuallyEnterGasCode.setText(scanOriginalQRCode.qrCodeText);
+        }
 
         //Gas ID
         mannuallyEnterGasCode.addTextChangedListener(new TextWatcher() {
@@ -172,6 +178,15 @@ public class GasRegister extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        View rootView = findViewById(android.R.id.content);
+        rootView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideKeyboard();
+            }
+        });
+
     }
 
 
@@ -301,5 +316,13 @@ public class GasRegister extends AppCompatActivity {
             }
         }));
         Camera camera = cameraProvider.bindToLifecycle((LifecycleOwner) this, cameraSelector, imageAnalysis, preview);
+    }
+
+    private void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }

@@ -48,7 +48,6 @@ public class Homepage extends AppCompatActivity {
 
         //Objects.requireNonNull(getSupportActionBar()).hide();
 
-
         logout = findViewById(R.id.logout);
         name = findViewById(R.id.changeable_username);
         editProfile = findViewById(R.id.edit_personal_info_button);

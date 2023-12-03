@@ -75,7 +75,7 @@ public class NewGasRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gas_register);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Find views by ID
         newScanner = findViewById(R.id.oldScanner);
@@ -100,6 +100,14 @@ public class NewGasRegister extends AppCompatActivity {
         //取得唯一的sensor Id
         remain_Gas = new Remain_Gas();
         sensor_Id = remain_Gas.finalSensorId.get(0);
+
+        //帶過來Id
+        ScanNewQRCode scanNewQRCode = new ScanNewQRCode();
+        if(scanNewQRCode.gas_Id1!=null){
+            mannuallyEnterGasCode.setText(scanNewQRCode.gas_Id1);
+            changeableNewID.setText(scanNewQRCode.gas_Id1);
+            gasId = scanNewQRCode.gas_Id1;
+        }
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

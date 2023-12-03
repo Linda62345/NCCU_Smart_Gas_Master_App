@@ -76,6 +76,7 @@ public class ScanOriginalQRCode extends AppCompatActivity {
     public int gas_quantity;
     private DecoratedBarcodeView barcodeView;
     public static ArrayList<String> Gas_Id_Array = new ArrayList<String>();
+    public static String qrCodeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +127,12 @@ public class ScanOriginalQRCode extends AppCompatActivity {
                     sure();
                 }
                 else{
+                    if(input_Id.getText().toString() != null && !input_Id.getText().toString().trim().equals("")){
+                        qrCodeText = input_Id.getText().toString();
+                    }
+                    if(qrCodeText!=null){
+                        Log.i("qrCodeText",qrCodeText);
+                    }
                     Intent intent = new Intent(ScanOriginalQRCode.this, GasRegister.class);
                     startActivity(intent);
                 }
@@ -178,7 +185,7 @@ public class ScanOriginalQRCode extends AppCompatActivity {
 
     private BarcodeCallback callback = new BarcodeCallback() {
         public void barcodeResult(BarcodeResult result) {
-            String qrCodeText = result.getText();
+            qrCodeText = result.getText();
             if (qrCodeText != null) {
                 input_Id.setText(qrCodeText);
                 Log.i("Scanned QR Code", qrCodeText);
@@ -243,6 +250,9 @@ public class ScanOriginalQRCode extends AppCompatActivity {
             JSONObject responseJSON = new JSONObject(result);
             if (responseJSON.getString("response").contains("failure")) {
                 Toast.makeText(this, "此瓦斯桶尚未註冊", Toast.LENGTH_SHORT).show();
+                if(input_Id.getText().toString() != null && !input_Id.getText().toString().trim().equals("")){
+                    qrCodeText = input_Id.getText().toString();
+                }
                 Intent intent = new Intent(ScanOriginalQRCode.this, GasRegister.class);
                 startActivity(intent);
             } else {
@@ -291,49 +301,6 @@ public class ScanOriginalQRCode extends AppCompatActivity {
         }, ContextCompat.getMainExecutor(this));
     }
 
-    //    private void bindCameraPreview(@NonNull ProcessCameraProvider cameraProvider) {
-//        barcodeView.setPreferredImplementationMode(PreviewView.ImplementationMode.SURFACE_VIEW);
-//
-//        Preview preview = new Preview.Builder()
-//                .build();
-//
-//        CameraSelector cameraSelector = new CameraSelector.Builder()
-//                .requireLensFacing(CameraSelector.LENS_FACING_BACK)
-//                .build();
-//
-//        preview.setSurfaceProvider(previewView.createSurfaceProvider());
-//
-//        ImageAnalysis imageAnalysis =
-//                new ImageAnalysis.Builder()
-//                        .setTargetResolution(new Size(1280, 720))
-//                        .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-//                        .build();
-//
-//        imageAnalysis.setAnalyzer(ContextCompat.getMainExecutor(this), new QRCodeImageAnalyzer(new QRCodeFoundListener() {
-//            @Override
-//            public void onQRCodeFound(String _qrCode) {
-//                qrCode = _qrCode;
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        input_Id.setText(qrCode);
-//                    }
-//                });
-//                Log.i(ScanReceiptQRCode.class.getSimpleName(), "QR Code Found: " + qrCode);
-//            }
-//
-//            @Override
-//            public void qrCodeNotFound() {
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-////                        order_ID_Text.setText(""); // Clear the EditText when QR code is not found
-//                    }
-//                });
-//            }
-//        }));
-//        Camera camera = cameraProvider.bindToLifecycle((LifecycleOwner) this, cameraSelector, imageAnalysis, preview);
-//    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

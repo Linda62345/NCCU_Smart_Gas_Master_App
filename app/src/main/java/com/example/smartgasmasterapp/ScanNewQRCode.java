@@ -28,6 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.smartgasmasterapp.ui.login.LoginActivity;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -66,7 +67,8 @@ public class ScanNewQRCode extends AppCompatActivity {
     private TextView GAS_ID, Initial_Volume, GAS_Type;
     public ArrayList<String> New_Gas_Id_Array;
     private DecoratedBarcodeView barcodeView;
-    public String Customer_Id,qrCode,gas_Id1,Gas_Weight_Empty,sensor_Id;
+    public String Customer_Id,qrCode,Gas_Weight_Empty,sensor_Id;
+    public static String gas_Id1;
     public static String condition,S_condition;
 
 
@@ -159,7 +161,7 @@ public class ScanNewQRCode extends AppCompatActivity {
                 Initial_Volume.setText("");
                 GAS_Type.setText("");
             } else {
-                String Showurl = "http://10.0.2.2/SQL_Connect/Show_Gas_Info.php";
+                String Showurl = "http://54.199.33.241/test/Show_Gas_Info.php";
                 URL url = new URL(Showurl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -352,6 +354,7 @@ public class ScanNewQRCode extends AppCompatActivity {
                 input_newGasId.setText(qrCodeText);
                 Log.i("Scanned QR Code", qrCodeText);
             } else {
+                Toast.makeText(ScanNewQRCode.this, "請條碼不符合格式", Toast.LENGTH_SHORT).show();
                 Log.i("Scanned QR Code length invallid ", qrCodeText);
             }
         }

@@ -27,9 +27,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -260,8 +265,28 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }, new Response.ErrorListener() {
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(LoginActivity.this, error.toString().trim(), Toast.LENGTH_SHORT).show();
-                    Log.i("login error", error.toString());
+                    if (error instanceof NoConnectionError) {
+                        // 沒有網路連線錯誤
+                        Toast.makeText(LoginActivity.this, "請連接網路", Toast.LENGTH_SHORT).show();
+                    } else if (error instanceof NetworkError) {
+                        // 網路錯誤，例如超時或連接問題
+                        Toast.makeText(LoginActivity.this, "網路錯誤，例如超時或連接問題", Toast.LENGTH_SHORT).show();
+                    } else if (error instanceof ServerError) {
+                        // 伺服器錯誤，可能是錯誤的請求或伺服器內部錯誤
+                        Toast.makeText(LoginActivity.this, "伺服器錯誤，可能是錯誤的請求或伺服器內部錯誤", Toast.LENGTH_SHORT).show();
+                    } else if (error instanceof AuthFailureError) {
+                        // 身份驗證失敗錯誤
+                        Toast.makeText(LoginActivity.this, "身份驗證失敗錯誤", Toast.LENGTH_SHORT).show();
+                    } else if (error instanceof ParseError) {
+                        // 解析數據錯誤
+                        Toast.makeText(LoginActivity.this, "解析數據錯誤", Toast.LENGTH_SHORT).show();
+                    } else if (error instanceof TimeoutError) {
+                        // 請求超時錯誤
+                        Toast.makeText(LoginActivity.this, "請求超時錯誤", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // 其他未知錯誤
+                        Toast.makeText(LoginActivity.this, "其他未知錯誤", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }) {
                 protected Map<String, String> getParams() throws AuthFailureError {
