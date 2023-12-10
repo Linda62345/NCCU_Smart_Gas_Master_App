@@ -247,11 +247,14 @@ public class OrderInfo extends AppCompatActivity {
                     if (response.contains("failure")) {
                         Toast.makeText(getApplicationContext(), "無法完成", Toast.LENGTH_SHORT).show();
                     } else if (response.contains("success")) {
-                        saveSensorWeight();
+                        for(int i = 0 ; i<orderList.sensor_Id_Array.size() ; i++){
+                            saveSensorWeight(orderList.sensor_Id_Array.get(i));
+                        }
+
                     }
                     else{
                         Log.i("save_new_order",response);
-                        Toast.makeText(getApplicationContext(), "請確認連線或是聯絡公司", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "請確認連線或是聯絡公司1", Toast.LENGTH_SHORT).show();
                     }
                 }
             }, new Response.ErrorListener() {
@@ -286,7 +289,7 @@ public class OrderInfo extends AppCompatActivity {
         }
     }
 
-    public void saveSensorWeight() {
+    public void saveSensorWeight(String id) {
         try {
             String URL = "http://54.199.33.241/test/Save_OriginalWeight.php";
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
@@ -305,7 +308,7 @@ public class OrderInfo extends AppCompatActivity {
                     }
                     else{
                         Log.i("saveSensorWeight",response);
-                        Toast.makeText(getApplicationContext(), "請確認連線或是聯絡公司", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "請確認連線或是聯絡公司2", Toast.LENGTH_SHORT).show();
                     }
                 }
             }, new Response.ErrorListener() {
@@ -318,11 +321,7 @@ public class OrderInfo extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> data = new HashMap<>();
-
-                    for(int i = 0 ; i<orderList.sensor_Id_Array.size() ; i++){
-                        data.put("id", orderList.sensor_Id_Array.get(i));
-                    }
-
+                    data.put("id", id);
                     return data;
                 }
             };
