@@ -28,101 +28,101 @@
         android:theme="@style/Theme.SmartGasMasterApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".RegisterWeightOnly"
+            android:name="com.glotech.smartgasmasterapp.RegisterWeightOnly"
             android:exported="false"
             android:label="@string/gas_register"
-            android:parentActivityName=".ScanNewQRCode"/>
+            android:parentActivityName="com.glotech.smartgasmasterapp.ScanNewQRCode"/>
         <activity
-            android:name=".NewGasRegister"
+            android:name="com.glotech.smartgasmasterapp.NewGasRegister"
             android:exported="false"
             android:label="@string/gas_register"
-            android:parentActivityName=".ScanNewQRCode" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.ScanNewQRCode" />
         <activity
-            android:name=".TakeOrder"
+            android:name="com.glotech.smartgasmasterapp.TakeOrder"
             android:exported="false"
             android:label="@string/takeOrderTitle" />
         <activity
-            android:name=".OrderInfo"
+            android:name="com.glotech.smartgasmasterapp.OrderInfo"
             android:exported="false"
             android:label="@string/orderInformation"
-            android:parentActivityName=".OrderList" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.OrderList" />
         <activity
-            android:name=".ForgetPassword2"
+            android:name="com.glotech.smartgasmasterapp.ForgetPassword2"
             android:exported="false"
             android:label="@string/forgetPassword"
-            android:parentActivityName=".ForgetPassword1" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.ForgetPassword1" />
         <activity
-            android:name=".ForgetPassword1"
+            android:name="com.glotech.smartgasmasterapp.ForgetPassword1"
             android:exported="false"
             android:label="@string/forgetPassword"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.MainActivity" />
         <activity
-            android:name=".ScanUserID"
+            android:name="com.glotech.smartgasmasterapp.ScanUserID"
             android:exported="false"
             android:label="@string/scanIDString" />
         <activity
-            android:name=".ecchangeSucced"
+            android:name="com.glotech.smartgasmasterapp.ecchangeSucced"
             android:exported="false"
             android:label="換桶成功通知" />
         <activity
-            android:name=".ExchangeScanFailed"
+            android:name="com.glotech.smartgasmasterapp.ExchangeScanFailed"
             android:exported="false"
             android:label="換桶失敗通知" />
         <activity
-            android:name=".ScanReceiptQRCode"
+            android:name="com.glotech.smartgasmasterapp.ScanReceiptQRCode"
             android:exported="false"
             android:label="@string/scanReceiptString"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.MainActivity" />
         <activity
-            android:name=".ScanNewQRCode"
+            android:name="com.glotech.smartgasmasterapp.ScanNewQRCode"
             android:exported="false"
             android:label="@string/scanNewString"
-            android:parentActivityName=".Remain_Gas" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.Remain_Gas" />
         <activity
-            android:name=".GasRegister"
+            android:name="com.glotech.smartgasmasterapp.GasRegister"
             android:exported="false"
             android:label="@string/gas_register"
-            android:parentActivityName=".ScanOriginalQRCode" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.ScanOriginalQRCode" />
         <activity
-            android:name=".Remain_Gas"
+            android:name="com.glotech.smartgasmasterapp.Remain_Gas"
             android:exported="false"
             android:label="殘氣輸入"
-            android:parentActivityName=".ScanOriginalQRCode" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.ScanOriginalQRCode" />
         <activity
-            android:name=".ScanOriginalQRCode"
+            android:name="com.glotech.smartgasmasterapp.ScanOriginalQRCode"
             android:exported="false"
             android:label="@string/scanOriginalString"
-            android:parentActivityName=".OrderInfo" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.OrderInfo" />
         <activity
-            android:name=".EditPersonalInfo"
+            android:name="com.glotech.smartgasmasterapp.EditPersonalInfo"
             android:exported="false"
             android:label="@string/edit_personal"
-            android:parentActivityName=".Homepage" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.Homepage" />
         <activity
-            android:name=".OrderListUnfinished"
+            android:name="com.glotech.smartgasmasterapp.OrderListUnfinished"
             android:exported="false"
             android:label="@string/today_order"
-            android:parentActivityName=".Homepage" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.Homepage" />
         <activity
-            android:name=".OrderList"
+            android:name="com.glotech.smartgasmasterapp.OrderList"
             android:exported="false"
             android:label="@string/today_order"
-            android:parentActivityName=".Homepage" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.Homepage" />
         <activity
-            android:name=".Homepage"
+            android:name="com.glotech.smartgasmasterapp.Homepage"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name="com.glotech.smartgasmasterapp.Register"
             android:exported="false"
             android:label="@string/register_string"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.MainActivity" />
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name="com.glotech.smartgasmasterapp.ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/login_string"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.glotech.smartgasmasterapp.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.glotech.smartgasmasterapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

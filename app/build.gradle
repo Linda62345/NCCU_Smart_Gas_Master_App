@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    namespace 'com.example.smartgasmasterapp'
+    namespace 'glotech.smartgasmasterapp'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.smartgasmasterapp"
+        applicationId "glotech.smartgasmasterapp"
         minSdk 26
         targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

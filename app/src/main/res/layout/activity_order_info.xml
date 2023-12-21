@@ -210,7 +210,7 @@
 
         </GridLayout>
 
-        <com.example.smartgasmasterapp.listViewAdjust
+        <com.glotech.smartgasmasterapp.listViewAdjust
             android:id="@+id/list_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderList"
+    tools:context="com.glotech.smartgasmasterapp.OrderList"
     android:background="@color/white">
 
     <androidx.appcompat.widget.AppCompatButton
@@ -81,7 +81,7 @@
     </LinearLayout>
 
 
-        <com.example.smartgasmasterapp.listViewAdjust
+        <com.glotech.smartgasmasterapp.listViewAdjust
             android:id="@+id/list_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

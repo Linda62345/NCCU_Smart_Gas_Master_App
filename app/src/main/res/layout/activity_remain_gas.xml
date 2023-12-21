@@ -88,7 +88,7 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <com.example.smartgasmasterapp.listViewAdjust
+    <com.glotech.smartgasmasterapp.listViewAdjust
         android:id="@+id/Listview"
         android:layout_width="match_parent"
         android:layout_marginVertical="20dp"
