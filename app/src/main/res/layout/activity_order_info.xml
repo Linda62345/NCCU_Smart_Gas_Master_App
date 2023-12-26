@@ -126,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="30dp"
                 android:layout_gravity="start|center"
+                android:maxLines="3"
                 android:layout_marginTop="6dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ff757575"
@@ -177,8 +178,7 @@
                 android:layout_gravity="start|center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ff757575"
-                android:autoSizeTextType="uniform"
-                android:layout_marginEnd="20dp"/>
+                android:autoSizeTextType="uniform"/>
 
         </GridLayout>
 
