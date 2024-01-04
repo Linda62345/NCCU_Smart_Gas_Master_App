@@ -125,27 +125,28 @@ public class OrderList extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        if(data.size()>0){
-            OrderListAdapter adapter=
-                    new OrderListAdapter(this,R.layout.adapter_order_list,data);
-            orderlist.setAdapter(adapter);
-            orderlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    //當備案下時
-                    String msg= dataId[position];
-                    Toast.makeText(OrderList.this,msg,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(OrderList.this, OrderInfo.class);
-                    String Id = order_Id[position];
-                    static_order_id = Id;
-                    startActivity(intent);
-                }
-            });
+        if(data!=null){
+            if(data.size()>0){
+                OrderListAdapter adapter=
+                        new OrderListAdapter(this,R.layout.adapter_order_list,data);
+                orderlist.setAdapter(adapter);
+                orderlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        //當備案下時
+                        //String msg= dataId[position];
+                        //Toast.makeText(OrderList.this,msg,Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(OrderList.this, OrderInfo.class);
+                        String Id = order_Id[position];
+                        static_order_id = Id;
+                        startActivity(intent);
+                    }
+                });
+            }
+            else{
+                Toast.makeText(this, "無訂單", Toast.LENGTH_SHORT).show();
+            }
         }
-        else{
-            Toast.makeText(this, "無訂單", Toast.LENGTH_SHORT).show();
-        }
-
     }
     private void getOrderList(String Showurl) throws MalformedURLException {
         try {
@@ -191,7 +192,7 @@ public class OrderList extends AppCompatActivity {
                     order_Id[i] = jo.getString("ORDER_Id");
                 }
             } catch (Exception e) {
-                Log.i("newOrderList JSON Exception ", e.toString());
+                Log.i("newOrderList JSON Exception", e.toString());
             }
         } catch (Exception e) {
             Log.i("GetOrderList Exception", e.toString());

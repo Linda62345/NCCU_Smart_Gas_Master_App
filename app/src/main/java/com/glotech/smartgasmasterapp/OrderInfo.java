@@ -80,7 +80,7 @@ public class OrderInfo extends AppCompatActivity {
         phone = findViewById(R.id.changable_contactNumber);
         address = findViewById(R.id.changable_deliveryAddress);
         ordertime = findViewById(R.id.ordertime);
-        gas_Quan = findViewById(R.id.changable_gasQTY);
+        //gas_Quan = findViewById(R.id.changable_gasQTY);
 
         try {
             showData();
@@ -153,9 +153,6 @@ public class OrderInfo extends AppCompatActivity {
             address.setText(Order_Address);
             Customer_Id = responseJSON.getString("Customer_Id");
             Log.i("Customer_Id", Customer_Id);
-            Order_GasQuan = responseJSON.getString("Gas_Quantity");
-            gas_Quan.setText(Order_GasQuan);
-            gas_quantity = Integer.parseInt(Order_GasQuan);
             String OT = responseJSON.getString("Expect_time");
             ordertime.setText(OT);
         } catch (Exception e) {
@@ -205,12 +202,18 @@ public class OrderInfo extends AppCompatActivity {
                     quantity[i] = jo.getString("Order_Quantity");
 //                    type[i] = jo.getString("Order_type");
                     String orderType = jo.getString("Order_type");
-                    if (orderType.equals("tradition")) {
-                        type[i] = "傳統桶";
-                    } else if (orderType.equals("composite")) {
-                        type[i] = "複合桶";
+                    if (orderType != null) {
+                        orderType = orderType.toUpperCase(); // Convert to uppercase
+
+                        if (orderType.equals("TRADITION")) {
+                            type[i] = "傳統桶";
+                        } else if (orderType.equals("COMPOSITE")) {
+                            type[i] = "複合桶";
+                        } else {
+                            type[i] = "N/A"; // In case of any other value, just use the original value
+                        }
                     } else {
-                        type[i] = "N/A"; // In case of any other value, just use the original value
+                        type[i] = "N/A"; // Handle the case when orderType is null
                     }
                     weight[i] = jo.getString("Order_weight");
                     orderDetail od = new orderDetail(quantity[i], type[i], weight[i]);

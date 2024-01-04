@@ -10,8 +10,8 @@ android {
         applicationId "glotech.smartgasmasterapp"
         minSdk 26
         targetSdk 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.3"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
